@@ -42,3 +42,16 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+const serviceElements = document.querySelectorAll('.service');
+
+window.addEventListener('scroll', () => {
+    const triggerBottom = window.innerHeight / 5 * 4;
+
+    serviceElements.forEach(service => {
+        const serviceTop = service.getBoundingClientRect().top;
+
+        if (serviceTop < triggerBottom) {
+            service.classList.add('show');
+        }
+    });
+});
